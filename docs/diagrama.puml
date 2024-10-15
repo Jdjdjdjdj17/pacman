@@ -1,0 +1,128 @@
+@startuml diagrama
+
+class JuegoPacman{
++InicioGame()
++PauseGame()
++FinGame()
+-Nivel: aumentar
+-Nivel: descender
+-Puntuacion: puntuacion
+}
+
+class Aumentar{
+    +Subir()
+}
+
+class Descender{
+    +Bajar()
+}
+
+class Personaje{
++Reaparecer()
+-EstadoFisico: estadoActual
+}
+
+class PersonajeJugable{
+}
+
+class NPC{
+}
+
+class Pacman{
++Comer()
+}
+
+class Fantasma{
++Perseguir()
++Huir()
+}
+
+class Fruta{
+-posicion
++SeConsume()
+}
+
+class Animacion
+
+class Dibujo{
+}
+
+class Muro
+
+class Mapa
+
+class Laverinto{
++ReiniciarLaverinto()
++ChecarColiciones()
+}
+
+class Puntuacion
+
+class Nivel{
+    +Aumentar()
+    +Descender()
+    -Puntuacion: aumentar
+    -Puntuacion: descender
+}
+
+class Figura
+
+class Color
+
+class Azul
+
+class Naranja
+
+class Rojo
+
+class Rosa
+
+class BolaDePoder{
+    +Poder()
+    +Inmunidad()
+    -seCome: Fantasma
+}
+
+class Pacdots{
+    +Puntuar()
+    -seConsume
+}
+
+class EstadoFisico
+
+class Vivo
+
+class Muerto
+
+Puntuacion o--Aumentar
+Puntuacion o--Descender
+Nivel*--Puntuacion
+Personaje*--EstadoFisico
+JuegoPacman*--Puntuacion
+EstadoFisico<|--Vivo
+EstadoFisico<|--Muerto
+Pacman o--Fantasma
+JuegoPacman o--Nivel
+Personaje*--Color
+PersonajeJugable<|--Pacman
+NPC<|--Fantasma
+JuegoPacman*--Personaje 
+JuegoPacman*--Mapa
+Personaje*--Animacion
+Personaje<|--NPC
+Personaje<|--PersonajeJugable
+Pacman o--Fruta
+Pacman o--BolaDePoder
+Pacman o--Pacdots
+Animacion*-- Dibujo
+Color<|--Azul 
+Color<|--Naranja
+Color<|-- Rojo
+Color<|-- Rosa
+Mapa*--Color
+Laverinto<|-- Figura
+Mapa<|-- Laverinto 
+Dibujo<|-- Muro
+
+
+@enduml
