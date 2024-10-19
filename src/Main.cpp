@@ -2,5 +2,5 @@
 #include <TazoDorado.hpp>
 
 int main(){
-    std::cout<<"Hola mundo"<<std::endl;
+    std::cout<<"Hola mundo 2"<<std::endl;
 }
