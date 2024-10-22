@@ -2,5 +2,12 @@
 #include <TazoDorado.hpp>
 
 int main(){
-    std::cout<<"Hola mundo 2"<<std::endl;
+
+    TazoDorado coqueto;
+    coqueto.Flotar();
+    std::cout
+        <<"El coqueto esta flotando?"
+        <<std::endl
+        <<coqueto.Flotando()
+        <<std::endl;
 }
